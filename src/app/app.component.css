@@ -1,0 +1,41 @@
+.challenge-wrapper {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instructions {
+  background: #ffffff;
+  border: 1px solid #dde1ea;
+  border-radius: 10px;
+  padding: 24px;
+  height: fit-content;
+  position: sticky;
+  top: 24px;
+}
+
+.work-area {
+  background: #ffffff;
+  border: 1px solid #dde1ea;
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 500px;
+}
+
+.work-area h2 {
+  margin-bottom: 12px;
+  color: #1a1a2e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .challenge-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .instructions {
+    position: static;
+  }
+}
