@@ -1,1 +1,62 @@
-/* Add application styles & imports to this file! */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  padding: 24px;
+}
+
+h1 { font-size: 20px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+h2 { font-size: 15px; font-weight: 500; margin: 16px 0 8px; color: #333; }
+p  { font-size: 14px; color: #555; line-height: 1.6; }
+
+ol {
+  font-size: 14px;
+  color: #333;
+  line-height: 2.2;
+  padding-left: 20px;
+}
+
+code {
+  background: #eef0f5;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: #c0392b;
+  font-family: 'Courier New', monospace;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dde1ea;
+  margin: 16px 0;
+}
+
+input[type='text'] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type='text']:focus {
+  border-color: #4a6cf7;
+}
+
+button {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #e74c3c;
+  color: white;
+}
+
+button:hover { background: #c0392b; }

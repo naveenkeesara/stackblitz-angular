@@ -2,25 +2,30 @@ import { Injectable } from '@angular/core';
 import { User } from './user.model';
 
 /**
- * UserService — already built for you. DO NOT MODIFY.
+ * ================================================
+ *  UserService — DO NOT MODIFY THIS FILE
+ * ================================================
  *
- * Available method:
- *   getUsers(): User[]  — returns the full list of users
+ *  Available method:
+ *    getUsers(): User[]
+ *    Returns the full list of 8 users.
+ *
+ *  How to use in your component:
+ *    constructor(private userService: UserService) {}
+ *    this.users = this.userService.getUsers();
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class UserService {
 
   private users: User[] = [
-    { id: 1, name: 'Naveen Reddy',    email: 'naveen@company.com',   department: 'Engineering',  status: 'Active'   },
-    { id: 2, name: 'Priya Sharma',    email: 'priya@company.com',    department: 'Design',       status: 'Active'   },
-    { id: 3, name: 'Ravi Kumar',      email: 'ravi@company.com',     department: 'Engineering',  status: 'Inactive' },
-    { id: 4, name: 'Anitha Gandu',    email: 'anitha@company.com',   department: 'QA',           status: 'Active'   },
-    { id: 5, name: 'Jagadish Borra',  email: 'jagadish@company.com', department: 'Engineering',  status: 'Inactive' },
-    { id: 6, name: 'Sowmya Reddy',    email: 'sowmya@company.com',   department: 'Product',      status: 'Active'   },
-    { id: 7, name: 'Harsha Vardhan',  email: 'harsha@company.com',   department: 'DevOps',       status: 'Inactive' },
-    { id: 8, name: 'Meena Iyer',      email: 'meena@company.com',    department: 'Design',       status: 'Active'   }
+    { id: 1, name: 'Naveen Reddy',   email: 'naveen@company.com',   department: 'Engineering', status: 'Active'   },
+    { id: 2, name: 'Priya Sharma',   email: 'priya@company.com',    department: 'Design',      status: 'Active'   },
+    { id: 3, name: 'Ravi Kumar',     email: 'ravi@company.com',     department: 'Engineering', status: 'Inactive' },
+    { id: 4, name: 'Anitha Gandu',   email: 'anitha@company.com',   department: 'QA',          status: 'Active'   },
+    { id: 5, name: 'Jagadish Borra', email: 'jagadish@company.com', department: 'Engineering', status: 'Inactive' },
+    { id: 6, name: 'Sowmya Reddy',   email: 'sowmya@company.com',   department: 'Product',     status: 'Active'   },
+    { id: 7, name: 'Harsha Vardhan', email: 'harsha@company.com',   department: 'DevOps',      status: 'Inactive' },
+    { id: 8, name: 'Meena Iyer',     email: 'meena@company.com',    department: 'Design',      status: 'Active'   }
   ];
 
   getUsers(): User[] {

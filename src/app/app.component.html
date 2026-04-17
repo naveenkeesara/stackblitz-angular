@@ -1,91 +1,133 @@
 <div class="challenge-wrapper">
 
-<!-- ======= INSTRUCTIONS PANEL ======= -->
-<div class="instructions">
-  <h1>Angular Interview Challenge — User Directory</h1>
-  <p>Read all instructions carefully before writing any code. You have <strong>30 minutes.</strong></p>
+  <!-- ===== LEFT: INSTRUCTIONS ===== -->
+  <div class="instructions">
 
-  <hr />
+    <h1>&#127775; Angular Interview Challenge</h1>
+    <p class="subtitle">User Directory &mdash; Angular 18 + RxJS</p>
+    <p class="timer">&#9200; You have <strong>30 minutes</strong></p>
 
-  <h2>What is already built for you</h2>
-  <ol>
-    <li><code>UserService</code> — already has 8 users. Use <code>getUsers()</code> to fetch them. Do NOT modify it.</li>
-    <li><code>AppModule</code> — <code>ReactiveFormsModule</code> is already imported for you.</li>
-    <li>Global styles are ready — focus on logic, not CSS.</li>
-  </ol>
+    <hr />
 
-  <hr />
+    <h2>What is already built for you</h2>
+    <ol>
+      <li>
+        <code>UserService</code> with 8 users &mdash; call <code>getUsers()</code>.
+        <strong>Do NOT modify it.</strong>
+      </li>
+      <li>
+        <code>CommonModule</code> and <code>ReactiveFormsModule</code> are already
+        imported in <code>AppComponent</code> &mdash; import them in your own
+        components too.
+      </li>
+      <li>Global styles are ready &mdash; focus on logic, not CSS.</li>
+    </ol>
 
-  <h2>Your Tasks</h2>
-  <ol>
-    <li>
-      <strong>Task 1 — Service &amp; Display</strong><br />
-      Create a <code>UserListComponent</code>. Inject <code>UserService</code> and display all users in a list.
-      Show each user's <strong>name, email, department, and status</strong>.
-    </li>
-    <li>
-      <strong>Task 2 — Parent-Child Communication</strong><br />
-      Create a <code>UserCardComponent</code>. Pass each user from the list to the card using <code>@Input()</code>.
-      Add a <strong>Delete</strong> button inside the card. When clicked, use <code>@Output()</code> to notify
-      the parent to remove that user from the list.
-    </li>
-    <li>
-      <strong>Task 3 — Search Filter (RxJS)</strong><br />
-      Add a text input at the top of <code>UserListComponent</code>.
-      Filter the displayed users as the candidate types.
-      <strong>Bonus:</strong> Use <code>debounceTime(300)</code> so the filter only runs after
-      the user stops typing for 300ms.
-    </li>
-    <li>
-      <strong>Task 4 — Directives &amp; Styling</strong><br />
-      Use <code>*ngIf</code> to show a <em>"No users found"</em> message when the list is empty.<br />
-      Use <code>ngClass</code> to highlight the card in <strong>green</strong> if the user's status is <code>Active</code>.
-    </li>
-    <li>
-      <strong>Task 5 — Lifecycle Hook</strong><br />
-      Inside <code>UserCardComponent</code>, implement <code>ngOnDestroy</code>.
-      Log this message to the console when a card is destroyed:
-      <code>User [name] removed from the list</code>
-    </li>
-  </ol>
+    <hr />
 
-  <hr />
+    <h2>Important: Standalone Components</h2>
+    <p>
+      This project uses <strong>Angular 18 standalone components</strong>.
+      There is <strong>no app.module.ts</strong>.
+      Every component you create must have <code>standalone: true</code>
+      in its decorator and must import its own dependencies.
+    </p>
 
-  <h2>User Model (for reference)</h2>
-  <p>Each user object has these fields:</p>
-  <ol>
-    <li><code>id</code> — number</li>
-    <li><code>name</code> — string</li>
-    <li><code>email</code> — string</li>
-    <li><code>department</code> — string</li>
-    <li><code>status</code> — <code>'Active'</code> or <code>'Inactive'</code></li>
-  </ol>
+    <hr />
 
-  <hr />
+    <h2>Task 1 &mdash; Service &amp; Display</h2>
+    <ol>
+      <li>Create <code>UserListComponent</code> as a standalone component</li>
+      <li>Inject <code>UserService</code> and call <code>getUsers()</code></li>
+      <li>Display all users &mdash; show <strong>name, email, department, status</strong></li>
+      <li>Import <code>UserListComponent</code> in <code>app.component.ts</code></li>
+      <li>Add <code>&lt;app-user-list&gt;</code> in <code>app.component.html</code></li>
+    </ol>
 
-  <h2>Files you need to create</h2>
-  <ol>
-    <li><code>src/app/user-list/user-list.component.ts</code></li>
-    <li><code>src/app/user-list/user-list.component.html</code></li>
-    <li><code>src/app/user-list/user-list.component.css</code></li>
-    <li><code>src/app/user-card/user-card.component.ts</code></li>
-    <li><code>src/app/user-card/user-card.component.html</code></li>
-    <li><code>src/app/user-card/user-card.component.css</code></li>
-  </ol>
-  <p>Remember to declare both components in <code>app.module.ts</code>.</p>
+    <hr />
 
-  <hr />
-  <p><strong>Good luck! Start with Task 1 and work your way down.</strong></p>
-</div>
+    <h2>Task 2 &mdash; Parent &rarr; Child Communication</h2>
+    <ol>
+      <li>Create <code>UserCardComponent</code> as a standalone component</li>
+      <li>Accept a user via <code>&#64;Input()</code></li>
+      <li>Display the user details inside the card</li>
+      <li>Add a <strong>Delete</strong> button</li>
+      <li>Emit the user id to the parent via <code>&#64;Output()</code> on click</li>
+      <li>Parent removes that user from the list</li>
+    </ol>
 
-<!-- ======= CANDIDATE WORK AREA ======= -->
-<div class="work-area">
-  <h2>Live Output</h2>
-  <p style="color:#888; font-size:13px;">Your UserListComponent will appear here once you wire it up below.</p>
+    <hr />
 
-  <!-- TODO: Replace this comment with your UserListComponent selector -->
-  <!-- <app-user-list></app-user-list> -->
+    <h2>Task 3 &mdash; Search Filter (RxJS)</h2>
+    <ol>
+      <li>Add a text input at the top of <code>UserListComponent</code></li>
+      <li>Use <code>FormControl</code> and filter users as you type</li>
+      <li>
+        <strong>Bonus:</strong> Wrap with <code>debounceTime(300)</code>
+        so filter only runs after typing stops for 300ms
+      </li>
+    </ol>
 
-</div>
+    <hr />
+
+    <h2>Task 4 &mdash; Directives &amp; Styling</h2>
+    <ol>
+      <li>
+        Show <em>"No users found"</em> message when filtered list is empty
+        &mdash; use <code>&#64;if</code> (new syntax) or <code>*ngIf</code>
+      </li>
+      <li>
+        Add <code>class="active-card"</code> when <code>user.status === 'Active'</code>
+        &mdash; style it with a green left border or green text
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>Task 5 &mdash; Lifecycle Hook</h2>
+    <ol>
+      <li>Implement <code>ngOnDestroy</code> in <code>UserCardComponent</code></li>
+      <li>
+        Log to console when a card is destroyed:
+        <br />
+        <code>User [name] removed from the list</code>
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>Files to create</h2>
+    <ol>
+      <li><code>src/app/user-list/user-list.component.ts</code></li>
+      <li><code>src/app/user-list/user-list.component.html</code></li>
+      <li><code>src/app/user-list/user-list.component.css</code></li>
+      <li><code>src/app/user-card/user-card.component.ts</code></li>
+      <li><code>src/app/user-card/user-card.component.html</code></li>
+      <li><code>src/app/user-card/user-card.component.css</code></li>
+    </ol>
+
+    <hr />
+
+    <p class="tip">
+      &#128161; Start with Task 1. Get users showing first.
+      Then move to Task 2. Do not skip ahead.
+    </p>
+
+  </div>
+
+  <!-- ===== RIGHT: LIVE OUTPUT ===== -->
+  <div class="work-area">
+    <h2>&#9654; Live Output</h2>
+    <p class="placeholder-note">
+      Your <code>UserListComponent</code> will appear here once you:<br /><br />
+      1. Create the component with <code>standalone: true</code><br />
+      2. Import it in <code>app.component.ts</code> imports array<br />
+      3. Replace the comment below with <code>&lt;app-user-list&gt;&lt;/app-user-list&gt;</code>
+    </p>
+
+    <!-- TODO: Replace this comment with your component selector once ready -->
+    <!-- <app-user-list></app-user-list> -->
+
+  </div>
 
 </div>

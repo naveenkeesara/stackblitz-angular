@@ -1,37 +1,68 @@
 .challenge-wrapper {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 390px 1fr;
   gap: 24px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .instructions {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #dde1ea;
   border-radius: 10px;
-  padding: 24px;
-  height: fit-content;
+  padding: 20px 22px;
   position: sticky;
   top: 24px;
+  height: fit-content;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #4a6cf7;
+  font-weight: 500;
+  margin-bottom: 2px !important;
+}
+
+.timer {
+  font-size: 13px;
+  color: #e67e22;
+  margin-bottom: 0 !important;
 }
 
 .work-area {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #dde1ea;
   border-radius: 10px;
-  padding: 24px;
+  padding: 22px;
   min-height: 500px;
 }
 
 .work-area h2 {
-  margin-bottom: 12px;
-  color: #1a1a2e;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
+  margin-bottom: 14px;
+  color: #1a1a2e;
 }
 
-@media (max-width: 768px) {
+.placeholder-note {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.8;
+  border: 2px dashed #dde1ea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.tip {
+  background: #fffbea;
+  border-left: 3px solid #f1c40f;
+  border-radius: 0 6px 6px 0;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #666;
+}
+
+@media (max-width: 900px) {
   .challenge-wrapper {
     grid-template-columns: 1fr;
   }
